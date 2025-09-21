@@ -29,6 +29,7 @@ MYSQL_PASSWORD=mysql             # ersetzen
 MYSQL_HOST=localhost             # ersetzen
 MYSQL_PORT=3306                  # ersetzen
 MYSQL_DATABASE=user_database     # verwenden
+#MySQL User, Password, Host und Datenbank müssen existieren und auf angegebenem Port lauschen. Tabellen werden automatisch angelegt. 
 
 # MAIL_DATA
 EMAIL_SERVICE=gmail              # aktuell nur Gmail getestet
