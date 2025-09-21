@@ -23,40 +23,51 @@ git clone <repo-url>
 ```.env
 
 # DATABASE_DATA
+
 MYSQL_ROOT_PASSWORD=admin        # nur für Entwicklung / Virtualisierung
+
 MYSQL_USER=mysql                 # ersetzen
 MYSQL_PASSWORD=mysql             # ersetzen
 MYSQL_HOST=localhost             # ersetzen
 MYSQL_PORT=3306                  # ersetzen
 MYSQL_DATABASE=user_database     # verwenden
+
 #MySQL User, Password, Host und Datenbank müssen existieren und auf angegebenem Port lauschen.
 #Für das Vorbereiten einer externen Datenbank, kann das init.sql Skript verwendet werden.
 #Tabellen werden im späteren Setup automatisch von Primsa.js über angelgte Modelle erstellt. 
 
 # MAIL_DATA
+
 EMAIL_SERVICE=gmail              # aktuell nur Gmail getestet
 EMAIL_ADDRESS=any@gmail.com      # ersetzen
 EMAIL_APP_PASSWORD=dgfhenfheutjgit # ersetzen
 
 # COMPANY_DATA
+
 COMPANY_NAME="Paper-Street-Soul-Company"  # ersetzen
 COMPANY_KIND="Ltd."                        # ersetzen
 
 # FRONTEND_DATA
+
 FRONTEND_URL=https://www.google.com  # ersetzen
 FRONTEND_PORT=4200                    # ersetzen
+
 # Hinweis: Für Redirects muss die URL online erreichbar sein, z.B. <fqdn>/user/:token
 
 # WEBTOKEN_DATA
+
 ACCESS_SECRET=mysupersecuresecret0234712893123478lala  # ersetzen
 
 # HASHING
+
 PEPPER=mySoE3ndl3sslkSuperSecretPepper123!  # ersetzen
 
 # BACKEND_DATA
+
 BACKEND_PORT=3000  # optional ersetzen, darauf achten, dass der Datenfluss passt
 
 # CONNECTION_MODI
+
 DATABASE_ON_REQUEST=false  # aktuell nur in diesem Modus getestet
 
 ```
