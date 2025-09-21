@@ -1,0 +1,26 @@
+{
+  "name": "prisma_data",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "rmdir /s /q .\\dist && concurrently \"tsc --watch\" \"nodemon --watch src --ext ts --exec \\\"ts-node src/index.ts\\\"\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@prisma/client": "^6.16.2",
+    "@types/express": "^5.0.3",
+    "@types/nodemailer": "^7.0.1",
+    "bcryptjs": "^3.0.2",
+    "concurrently": "^9.2.1",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "mysql2": "^3.15.0",
+    "nodemailer": "^7.0.6",
+    "prisma": "^6.16.2"
+  }
+}

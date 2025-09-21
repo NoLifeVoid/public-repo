@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Welcome Email</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f7fa;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 30px auto;
+        background: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .header {
+        background: linear-gradient(135deg, #4f46e5, #3b82f6);
+        color: #ffffff;
+        padding: 30px;
+        text-align: center;
+      }
+      .header h1 {
+        margin: 0;
+        font-size: 24px;
+      }
+      .content {
+        padding: 30px;
+        color: #333333;
+        line-height: 1.6;
+      }
+      .content h2 {
+        margin-top: 0;
+        color: #4f46e5;
+      }
+      .button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 24px;
+        background-color: #4f46e5;
+        color: #ffffff !important;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+      }
+      .footer {
+        padding: 20px;
+        text-align: center;
+        font-size: 12px;
+        color: #999999;
+        background-color: #f4f7fa;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" style="color: #0e0e0e!important;">
+      <div class="header">
+        <h1>Welcome</h1>
+      </div>
+      <div class="content">
+        <h2>Hello ###usernamegreeting###,</h2>
+        <p>
+          We're excited to have you join our community!  
+          Your account has been successfully created.
+        </p>
+        <p>
+          Here is ur Username. Caution. Casing matters:
+          <br />
+          <br />
+          <strong>Username:</strong> ###username###  
+          <br />
+        </p>
+        <p>
+          Click the button below to get set a password and get started:
+        </p>
+        <a href="###frontendlogin###/user/###token###" class="button">Go to Dashboard</a>
+        <p>
+          If you didn’t sign up for this account, you can safely ignore this email.
+        </p>
+      </div>
+      <div class="footer">
+        &copy; 2025 ###companyname###. All rights reserved.
+      </div>
+    </div>
+  </body>
+</html>

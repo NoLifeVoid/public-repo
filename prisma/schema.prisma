@@ -1,0 +1,96 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id           String   @id @default(uuid())
+  username     String   @unique
+  emailHash    String   @unique
+  passwordHash String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+
+  countries Country[] @relation("UserCountriesRelation")
+  groups  Group[] @relation("UserGroupsRelation")
+  rights  Right[] @relation("UserRightsRelation")
+  companies  Company[] @relation("UserCompaniesRelation")
+  manufacturers  Manufacturer[] @relation("UserManufacturersRelation")
+  sets Set[] @relation("UserSetsRelation")
+
+  RefreshToken RefreshToken?
+  passwordResets PasswordReset[]
+
+}
+
+model Country {
+  id    String @id @default(uuid())
+  name  String @unique
+  users User[] @relation("UserCountriesRelation")  
+}
+
+model Company {
+  id    String @id @default(uuid())
+  name  String @unique
+  users User[] @relation("UserCompaniesRelation")  
+}
+
+model Group {
+  id    String @id @default(uuid())
+  name  String @unique
+  users User[] @relation("UserGroupsRelation")  
+}
+model Right {
+  id    String @id @default(uuid())
+  name  String @unique
+  users User[] @relation("UserRightsRelation")  
+}
+
+model Set {
+  id    String @id @default(uuid())
+  name  String @unique
+  users User[] @relation("UserSetsRelation")  
+}
+
+model Manufacturer {
+  id    String @id @default(uuid())
+  name  String @unique
+  users User[] @relation("UserManufacturersRelation")  
+}
+
+model RefreshToken {
+  id        String   @id @default(uuid())
+  token     String   @unique
+  userId    String   @unique
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
+
+model LoginLog {
+  id        String   @id @default(uuid())
+  userId    String
+  // we did not go for delete on cascade for audits but we can if we unquote the line below and quote the line above
+  // user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  success   Boolean
+  createdAt DateTime @default(now())
+}
+
+
+model PasswordReset {
+  id        String   @id @default(uuid())
+  token     String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  used      Boolean  @default(false)
+  expiresAt DateTime @default(dbgenerated("(NOW() + interval 10 minute)"))
+  //expiresAt DateTime @default(dbgenerated("(now() + interval 1 hour)"))
+  createdAt DateTime @default(now())
+}
+
+
