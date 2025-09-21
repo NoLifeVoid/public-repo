@@ -30,7 +30,8 @@ MYSQL_HOST=localhost             # ersetzen
 MYSQL_PORT=3306                  # ersetzen
 MYSQL_DATABASE=user_database     # verwenden
 #MySQL User, Password, Host und Datenbank müssen existieren und auf angegebenem Port lauschen.
-#Tabellen werden automatisch angelegt. 
+#Für das Vorbereiten einer externen Datenbank, kann das init.sql Skript verwendet werden.
+#Tabellen werden im späteren Setup automatisch von Primsa.js über angelgte Modelle erstellt. 
 
 # MAIL_DATA
 EMAIL_SERVICE=gmail              # aktuell nur Gmail getestet
