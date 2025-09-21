@@ -132,7 +132,7 @@ Beispiel-Request-Body:
 ```json
 {
   "username": "newUserNiuniuhniu",
-  "email": "firebaselogintest00@gmail.com",
+  "email": "sld@domain.tld",
   "countries": ["England", "France"],
   "companies": ["Buh Corp", "Zeta Inc"],
   "groups": ["Admins"],
